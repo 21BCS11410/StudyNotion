@@ -121,6 +121,7 @@ export const Home = () => {
 
 
         {/* section 2 */}
+        {/* //here to add section 2 */}
 
 
 
