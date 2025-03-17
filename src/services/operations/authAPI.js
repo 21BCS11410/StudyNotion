@@ -1,5 +1,4 @@
 import { toast } from "react-hot-toast"
-
 import { setLoading, setToken } from "../../slices/authSlice"
 import { resetCart } from "../../slices/cartSlice"
 import setUser from "../../slices/ProfileSlice"
@@ -116,6 +115,7 @@ export function login(email, password, navigate) {
   }
 }
 
+
 export function getPasswordResetToken(email, setEmailSent) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
@@ -125,7 +125,7 @@ export function getPasswordResetToken(email, setEmailSent) {
         email,
       })
 
-      console.log("RESETPASSTOKEN RESPONSE............", response)
+      console.log("RESET PASSWORD TOKEN RESPONSE............", response)
 
       if (!response.data.success) {
         throw new Error(response.data.message)
@@ -134,7 +134,7 @@ export function getPasswordResetToken(email, setEmailSent) {
       toast.success("Reset Email Sent")
       setEmailSent(true)
     } catch (error) {
-      console.log("RESETPASSTOKEN ERROR............", error)
+      console.log("RESET PASSWORD TOKEN ERROR............", error)
       toast.error("Failed To Send Reset Email")
     }
     toast.dismiss(toastId)
@@ -153,7 +153,7 @@ export function resetPassword(password, confirmPassword, token, navigate) {
         token,
       })
 
-      console.log("RESETPASSWORD RESPONSE............", response)
+      console.log("RESET PASSWORD RESPONSE............", response)
 
       if (!response.data.success) {
         throw new Error(response.data.message)
