@@ -5,7 +5,9 @@ const Quote = () => {
   return (
     <div>
       We are passionate about revolutionizing the way we learn. Our innovative platform
+
       <HighlightText text={"combines technology"}/>
+
       <span className='text-brown-500'>
         {" "}
         expertise
@@ -15,6 +17,7 @@ const Quote = () => {
       {" "}
         unparalleled educational experience.
       </span>
+      
     </div>
   )
 }
