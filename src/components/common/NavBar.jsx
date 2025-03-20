@@ -59,7 +59,7 @@ const Navbar = () => {
       <div className='flex w-11/12 max-w-maxContent items-center justify-between'>
         {/* Image */}
       <Link to="/">
-        <img src={logo} alt='logoImage' width={160} height={42} loading='lazy'/>
+        <img src={logo} width={160} height={42} loading='lazy'/>
       </Link>
 
       {/* Nav Links */}
@@ -122,7 +122,7 @@ const Navbar = () => {
         <div className='flex gap-x-4 items-center'>
 
             {
-                user && user?.accountType !== "Instructor" && (
+                user && user?.accountType != "Instructor" && (
                     <Link to="/dashboard/cart" className='relative'>
                         <AiOutlineShoppingCart />
                         {
@@ -154,7 +154,7 @@ const Navbar = () => {
                 )
             }
             {
-                token !== null && <ProfileDropDown/>
+                token !== null && <ProfileDropDown />
             }
             
         </div>
