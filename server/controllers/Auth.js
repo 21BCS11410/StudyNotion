@@ -141,7 +141,7 @@ exports.login = async (req, res) => {
 
 		// Generate JWT token and Compare Password
 		if (await bcrypt.compare(password, user.password)) {
-				const token = jwt.sign(
+			const token = jwt.sign(
 				{ email: user.email, id: user._id, accountType: user.accountType },
 				process.env.JWT_SECRET,
 				{
@@ -171,13 +171,13 @@ exports.login = async (req, res) => {
 		}
 	} catch (error) {
 		console.error(error);
+		// Return 500 Internal Server Error status code with error message
 		return res.status(500).json({
 			success: false,
 			message: `Login Failure Please Try Again`,
 		});
 	}
 };
-
 // Send OTP For Email Verification
 exports.sendotp = async (req, res) => {
 	try {
@@ -193,7 +193,7 @@ exports.sendotp = async (req, res) => {
 			// Return 401 Unauthorized status code with error message
 			return res.status(401).json({
 				success: false,
-				message: "User is Already Registered",
+				message: `User is Already Registered`,
 			});
 		}
 

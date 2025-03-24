@@ -1,7 +1,6 @@
 const Profile = require("../models/Profile");
 const User = require("../models/User");
 const { uploadImageToCloudinary } = require("../utils/imageUploader");
-
 // Method for updating a profile
 exports.updateProfile = async (req, res) => {
 	try {
@@ -36,6 +35,11 @@ exports.updateProfile = async (req, res) => {
 
 exports.deleteAccount = async (req, res) => {
 	try {
+		// TODO: Find More on Job Schedule
+		// const job = schedule.scheduleJob("10 * * * * *", function () {
+		// 	console.log("The answer to life, the universe, and everything!");
+		// });
+		// console.log(job);
 		console.log("Printing ID: ", req.user.id);
 		const id = req.user.id;
 		
@@ -48,6 +52,7 @@ exports.deleteAccount = async (req, res) => {
 		}
 		// Delete Assosiated Profile with the User
 		await Profile.findByIdAndDelete({ _id: user.additionalDetails });
+		// TODO: Unenroll User From All the Enrolled Courses
 		// Now Delete User
 		await User.findByIdAndDelete({ _id: id });
 		res.status(200).json({
