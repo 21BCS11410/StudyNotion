@@ -10,8 +10,8 @@ import LearningGrid from "../components/core/AboutPage/LearningGrid"
 import Quote from "../components/core/AboutPage/Quote"
 import StatsComponenet from "../components/core/AboutPage/Stats"
 import HighlightText from "../components/core/HomePage/HighlightText"
-import ReviewSlider from "../components/common/ReviewSlider"
-import Footer from "../components/common/Footer"
+import ReviewSlider from "../components/Common/ReviewSlider"
+import Footer from "../components/Common/Footer"
 
 const About = () => {
   return (
