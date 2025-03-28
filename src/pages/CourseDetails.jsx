@@ -7,9 +7,9 @@ import ReactMarkdown from "react-markdown";
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 
-import ConfirmationModal from "../components/common/ConfirmationModal"
-import Footer from "../components/common/Footer"
-import RatingStars from "../components/common/RatingStars"
+import ConfirmationModal from "../components/Basic/ConfirmationModal"
+import Footer from "../components/Basic/Footer"
+import RatingStars from "../components/Basic/RatingStars"
 import CourseAccordionBar from "../components/core/Course/CourseAccordionBar"
 import CourseDetailsCard from "../components/core/Course/CourseDetailsCard"
 import { formatDate } from "../services/formatDate"
